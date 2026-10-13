@@ -68,7 +68,7 @@ export default function Demo() {
 
         .build-status-title {
           margin: 0;
-          font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+          font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
           font-size: clamp(30px, 4.4vw, 62px);
           font-weight: 700;
           letter-spacing: -0.035em;
@@ -95,7 +95,7 @@ export default function Demo() {
 
         .author-name {
           margin: 0;
-          font-family: var(--font-serif), Georgia, Cambria, serif;
+          font-family: 'Playfair Display', Georgia, Cambria, serif;
           font-style: italic;
           font-weight: 500;
           font-size: clamp(52px, 9.2vw, 142px);
@@ -107,7 +107,7 @@ export default function Demo() {
 
         .author-role {
           margin: clamp(14px, 1.8vw, 24px) 0 0;
-          font-family: var(--font-mono), ui-monospace, 'SF Mono', Menlo, monospace;
+          font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
           font-size: clamp(12px, 1.35vw, 17px);
           letter-spacing: 0.28em;
           text-transform: uppercase;
