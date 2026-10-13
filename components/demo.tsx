@@ -1,33 +1,34 @@
 "use client"
 
-import ColdFlameDrift from "@/components/ui/cold-flame-drift"
-
-const mono = "ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, monospace"
-const serif = "ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif"
+import { GradientBackground } from "@/components/ui/oceanic-shimmer"
 
 export default function Demo() {
   return (
-    <ColdFlameDrift
-      palette="ember"
-      angle={42}
-      scale={52}
-      speed={3.5}
-      grain={0.58}
-      forks={0.48}
-      turbulence={0.4}
-      interactive={true}
-      height="100dvh"
-      aria-label="Animated ember flame field"
-    >
+    <main className="relative h-screen w-screen overflow-hidden select-none">
+      {/* Oceanic Shimmer Background */}
+      <GradientBackground className="absolute inset-0 h-full w-full" />
+
+      {/* Atmospheric Contrast & Depth Vignette */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse at 85% 90%, rgba(10, 24, 48, 0.5) 0%, rgba(10, 24, 48, 0) 65%), " +
+            "radial-gradient(ellipse at 15% 90%, rgba(10, 24, 48, 0.6) 0%, rgba(10, 24, 48, 0) 60%), " +
+            "linear-gradient(to top, rgba(7, 20, 42, 0.75) 0%, rgba(7, 20, 42, 0.15) 45%, rgba(7, 20, 42, 0) 100%)",
+        }}
+      />
+
+      {/* Main Content Overlay */}
       <div className="portfolio-overlay">
-        {/* Left side: Build in progress */}
+        {/* Left Side: Build in progress */}
         <div className="build-status-wrapper">
           <h2 className="build-status-title">
             Build in progress
           </h2>
         </div>
 
-        {/* Right side: Siddhesh Nagawade Product design Portfolio */}
+        {/* Right Side: Siddhesh Nagawade Product design Portfolio */}
         <div className="author-wrapper">
           <h1 className="author-name">
             Siddhesh
@@ -47,11 +48,8 @@ export default function Demo() {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          padding: clamp(28px, 5vw, 64px);
-          background: 
-            radial-gradient(circle at bottom right, rgba(8, 3, 2, 0.45) 0%, rgba(8, 3, 2, 0) 65%),
-            linear-gradient(to right, rgba(8, 3, 2, 0.65) 0%, rgba(8, 3, 2, 0.1) 45%, rgba(8, 3, 2, 0.55) 100%);
-          color: #fdf4ec;
+          padding: clamp(32px, 5.5vw, 76px);
+          color: #ffffff;
           pointer-events: none;
         }
 
@@ -65,18 +63,18 @@ export default function Demo() {
         .build-status-wrapper {
           min-width: 0;
           pointer-events: auto;
-          padding-bottom: clamp(0px, 1.5vw, 16px);
+          padding-bottom: clamp(0px, 1.2vw, 14px);
         }
 
         .build-status-title {
           margin: 0;
-          font-family: ${mono};
-          font-size: clamp(26px, 3.6vw, 48px);
-          font-weight: 600;
-          letterSpacing: -0.02em;
-          line-height: 1.15;
-          color: #ff9238;
-          text-shadow: 0 4px 28px rgba(0, 0, 0, 0.85);
+          font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+          font-size: clamp(30px, 4.4vw, 62px);
+          font-weight: 700;
+          letter-spacing: -0.035em;
+          line-height: 1.08;
+          color: #f1f8fc;
+          text-shadow: 0 4px 32px rgba(10, 32, 64, 0.85);
         }
 
         .author-wrapper {
@@ -88,30 +86,37 @@ export default function Demo() {
           pointer-events: auto;
         }
 
+        @media (max-width: 767px) {
+          .author-wrapper {
+            align-items: flex-start;
+            text-align: left;
+          }
+        }
+
         .author-name {
           margin: 0;
-          font-family: ${serif};
+          font-family: var(--font-serif), Georgia, Cambria, serif;
           font-style: italic;
-          font-weight: 400;
-          font-size: clamp(48px, 8.5vw, 130px);
-          line-height: 0.9;
-          letter-spacing: -0.03em;
-          color: #fdf4ec;
-          text-shadow: 0 4px 48px rgba(0, 0, 0, 0.9);
+          font-weight: 500;
+          font-size: clamp(52px, 9.2vw, 142px);
+          line-height: 0.88;
+          letter-spacing: -0.035em;
+          color: #ffffff;
+          text-shadow: 0 8px 56px rgba(5, 18, 40, 0.95);
         }
 
         .author-role {
           margin: clamp(14px, 1.8vw, 24px) 0 0;
-          font-family: ${mono};
-          font-size: clamp(12px, 1.3vw, 17px);
-          letter-spacing: 0.24em;
+          font-family: var(--font-mono), ui-monospace, 'SF Mono', Menlo, monospace;
+          font-size: clamp(12px, 1.35vw, 17px);
+          letter-spacing: 0.28em;
           text-transform: uppercase;
-          color: #ff9238;
+          color: #8bd3f2;
           font-weight: 500;
           opacity: 0.95;
-          text-shadow: 0 2px 20px rgba(0, 0, 0, 0.85);
+          text-shadow: 0 2px 24px rgba(10, 40, 80, 0.9);
         }
       `}</style>
-    </ColdFlameDrift>
+    </main>
   )
 }
